@@ -44,6 +44,6 @@ merge conflicts and can be run using JavaFX 21.
 1.Clone the repository:
    ```bash
    git clone https://github.com/sasasaee/FacTrip_final_ver.git
-
-Open in Eclipse/IntelliJ with JavaFX setup
-Run Main.java
+   ```
+2. Open in Eclipse/IntelliJ with JavaFX setup
+3. Run Main.java   
