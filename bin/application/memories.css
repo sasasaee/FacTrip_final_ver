@@ -1,0 +1,196 @@
+/* Root pane background */
+.anchor-pane {
+    -fx-background-color: #E8E3D6;
+}
+
+/* Header labels */
+.label-header {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #800000;
+}
+
+/* Subtitle labels / date */
+.label-sub {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+}
+
+/* VBox entry boxes */
+.entry-box {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-color: #D3D3D3;
+}
+
+/* HBox inside entry VBox (text content) */
+.entry-text {
+    -fx-spacing: 8;
+}
+
+/* Title inside entry */
+.entry-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #800000;
+}
+
+/* Detail / content inside entry */
+.entry-detail {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-wrap-text: true;
+}
+
+/* Date label */
+.entry-date {
+    -fx-font-size: 12px;
+    -fx-text-fill: #555555;
+}
+
+/* Buttons */
+.button-main {
+    -fx-text-fill: #800000;
+    -fx-background-radius: 10;
+    -fx-font-size: 15px;
+}
+
+.button-secondary {
+    -fx-background-color: #A52A2A;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-size: 15px;
+}
+
+.button-save {
+    -fx-background-color: #E8E3D6;
+    -fx-text-fill: #800000;
+    -fx-background-radius: 10;
+    -fx-font-size: 13px;
+}
+
+.button-image {
+    -fx-background-color: #E8E3D6;
+    -fx-text-fill: #800000;
+    -fx-background-radius: 10;
+}
+
+/* HTMLEditor */
+.html-editor {
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #D3D3D3;
+}
+
+/* Main action button: + New Memory */
+.button-new-memory {
+    -fx-background-color: #800000;  /* Maroon */
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-size: 15px;
+}
+
+/* Secondary action button: Delete */
+.button-delete {
+    -fx-background-color: #B22222;  /* Firebrick / darker red */
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-size: 15px;
+}
+
+/* Hover effects for better feedback */
+.button-new-memory:hover {
+    -fx-background-color: #A00000;
+}
+
+.button-delete:hover {
+    -fx-background-color: #8B1A1A;
+}
+
+/* General checkbox styling */
+.checkbox {
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333; /* dark text */
+}
+
+/* Checkmark styling */
+.checkbox .box {
+    -fx-background-color: #f5f5f5; /* light background for box */
+    -fx-border-color: #800000;     /* maroon border */
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-pref-width: 20;
+    -fx-pref-height: 20;
+}
+
+/* Checked state */
+.checkbox:selected .box {
+    -fx-background-color: #800000; /* maroon fill when checked */
+    -fx-border-color: #800000;
+}
+
+/* Checkmark symbol */
+.checkbox:selected .mark {
+    -fx-background-color: white;   /* white checkmark */
+    -fx-background-insets: 3;      /* padding inside box */
+    -fx-shape: "M0,5 L5,10 L15,0"; /* simple checkmark shape */
+}
+
+/* Hover effect */
+.checkbox:hover .box {
+    -fx-border-color: #A00000; /* slightly brighter maroon on hover */
+}
+
+
+/* ScrollPane background */
+#scrollPane {
+    -fx-background-color: #f2f2f2; /* light gray background for the scroll area */
+    -fx-padding: 10; /* optional padding inside scrollpane */
+}
+
+/* VBox holding all entries */
+#listOfEntries {
+    -fx-spacing: 15;          /* space between each HBox entry */
+    -fx-padding: 15 20 15 20; /* top, right, bottom, left padding */
+    -fx-background-color: #e0dcdc; /* darker shade than scrollPane */
+    -fx-background-radius: 15;     /* slightly rounded corners */
+}
+
+/* Toolbar background */
+.html-editor .tool-bar {
+    -fx-background-color: #8B0000; /* Maroon toolbar */
+}
+
+/* Buttons in toolbar */
+.html-editor .tool-bar .button {
+    -fx-background-color: #E8E3D6; /* slightly lighter maroon */
+    -fx-text-fill: #FFFFFF;         /* white text/icon */
+}
+
+/* The editable content area */
+.html-editor .content {
+    -fx-background-color: #E8E3D6;  /* off-white background */
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #333333;         /* dark text */
+}
+
+/* Style the toolbar buttons in HTMLEditor */
+.htmk-editor .tool-bar .button {
+    -fx-background-radius: 30;        /* rounded corners */
+    -fx-background-color: #A52A2A;    /* example maroon */
+    -fx-text-fill: #fff;               /* button text color */
+}
+
+/* Hover effect for buttons */
+.htmk-editor .tool-bar .button:hover {
+    -fx-background-color: #8B0000;    /* darker maroon on hover */
+}
+
+/* Style the editable area (the webview inside HTMLEditor) */
+.htmk-editor .web-view {
+    -fx-background-color: #EDE7D9;    /* off-white content area */
+    -fx-border-radius: 10;
+}
+

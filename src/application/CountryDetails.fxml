@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="793.0" prefWidth="1570.0" style="-fx-background-color: #800000;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CountryDetailsController">
+
+    <!-- Header -->
+    <Label fx:id="countryFactsLabel" alignment="TOP_CENTER" layoutX="37.0" layoutY="20.0" prefHeight="58.0" prefWidth="400.0" text="Did you know?" textFill="#fffbfb">
+        <font>
+            <Font name="Centaur" size="50.0" />
+        </font>
+    </Label>
+
+    <!-- Scrollable content for details -->
+    <ScrollPane fitToWidth="true" layoutX="0" layoutY="100" prefHeight="693" prefWidth="1570" style="-fx-background-color: #E8E3D6;">
+        <content>
+            <VBox fx:id="detailsBox" spacing="20" style="-fx-padding: 20; -fx-background-color: #E8E3D6;">
+                <!-- 
+                    Each “card” (image + fact) will be added dynamically from the controller.
+                    Styling (background, border, padding) can be done in SceneBuilder or CSS class.
+                -->
+            </VBox>
+        </content>
+    </ScrollPane>
+
+</AnchorPane>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="793" prefWidth="1570" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ExploreFactsController">
+   <children>
+      <ScrollPane fitToWidth="true" layoutY="92.0" prefHeight="701.0" prefWidth="1576.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="92.0">
+         <content>
+            <TilePane fx:id="countryTilePane" hgap="5.0" prefColumns="5" prefHeight="212.0" prefWidth="1577.0" tileAlignment="TOP_LEFT" vgap="5.0">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </TilePane>
+         </content>
+      </ScrollPane>
+      <Pane prefHeight="92.0" prefWidth="1576.0" style="-fx-background-color: #800000;">
+         <children>
+            <Label layoutX="172.0" layoutY="16.0" prefHeight="61.0" prefWidth="348.0" text="Explore The Unknown" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Centaur" size="30.0" />
+               </font></Label>
+            <TextField fx:id="searchField" layoutX="714.0" layoutY="34.0" prefHeight="25.0" prefWidth="151.0" promptText="Search country...">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <Button layoutX="34.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleBackToMainMenu" prefHeight="40.0" prefWidth="100.0" style="-fx-background-radius: 10;" text="Main Menu" textFill="MAROON">
+               <font>
+                  <Font name="Cambria Math" size="15.0" />
+               </font></Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
