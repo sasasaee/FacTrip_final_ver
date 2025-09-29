@@ -701,9 +701,10 @@ public class PlannerController implements Initializable {
         return null;
     }
 
+
+
+
     // Reminder Logic
- // ------------------ Reminder Logic ------------------
-    
 
     private Timeline reminderTimeline;
     private Set<String> notifiedEvents = new HashSet<>(); // Prevent duplicate notifications
