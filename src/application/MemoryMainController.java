@@ -22,18 +22,30 @@ import javafx.scene.control.ScrollPane;
 
 
 
+/**
+ * Controller class for the main memory entries view.
+ * 
+ * <p>This class handles the UI logic for displaying, adding, editing, and deleting
+ * memory entries. It manages a VBox container that dynamically loads entries from
+ * the database and presents them with styled UI elements.</p>
+ */
 
 public class MemoryMainController {
 
+	//UI components
     @FXML private AnchorPane anchorPane;
     @FXML private CheckBox selectAll;
     @FXML private Button newEntry, delete;
     @FXML private VBox listOfEntries;
     @FXML private ScrollPane scrollPane;
 
-
+    // Observable list of all memory entries loaded from the database
     private ObservableList<MemoryEntry> entries = FXCollections.observableArrayList();
 
+    /**
+     * Called automatically when the FXML view is loaded.
+     * Initializes the database, styles the UI components, and loads entries.
+     */
     @FXML
     public void initialize() {
         DatabaseConnector.initializeDatabase();
@@ -98,6 +110,12 @@ public class MemoryMainController {
         }
     }
     
+    /**
+     * Creates a styled HBox representation for a single memory entry.
+     *
+     * @param entry the memory entry
+     * @return HBox UI component representing the entry
+     */
     private HBox createEntryBox(MemoryEntry entry) {
         HBox box = new HBox(20);
         box.setMinHeight(120);
@@ -147,7 +165,11 @@ public class MemoryMainController {
     }
 
 
+    // ---------------------------
+    // Event Handlers (linked to FXML)
+    // ---------------------------
 
+    /** Selects/deselects all entries based on the "Select All" checkbox. */
 
     @FXML
     private void selectAllEntries() {
@@ -155,7 +177,7 @@ public class MemoryMainController {
         for (MemoryEntry entry : entries) entry.setSelected(select);
         loadEntriesToUI();
     }
-
+    /** Opens the "Add New Entry" form to create a new memory entry. */
     @FXML
     private void AddNewEntry() {
         try {
@@ -172,6 +194,7 @@ public class MemoryMainController {
             e.printStackTrace();
         }
     }
+    /** Deletes all entries currently marked as selected. */
 
     @FXML
     private void DeleteSelectedEntry() {
@@ -190,11 +213,15 @@ public class MemoryMainController {
         }
     }
     
+    /** Placeholder for handling a specific entry selection event. */
+
     @FXML
     private void selectSpecificEntry(ActionEvent event) {
         // TODO: implement what should happen when the button is clicked
         System.out.println("Select button clicked!");
     }
+
+    /** Closes the current window and goes back to the previous stage. */
 
     @FXML
     private void handleBack(ActionEvent event) {
@@ -202,6 +229,9 @@ public class MemoryMainController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
+    
+    /** Switches the current scene back to the main menu. */
+
     @FXML
     private void mainMenuOn(ActionEvent event) {
         try {
@@ -220,6 +250,4 @@ public class MemoryMainController {
     }
 
   
-
-
 }

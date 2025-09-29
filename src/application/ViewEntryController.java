@@ -14,6 +14,18 @@ import java.io.File;
 import java.nio.file.Files;
 import java.sql.SQLException;
 
+/**
+ * Controller for viewing and editing a single memory entry.
+ *
+ * <p>This controller allows the user to:
+ * <ul>
+ *   <li>View entry details such as title and date.</li>
+ *   <li>Edit content using an {@link HTMLEditor}.</li>
+ *   <li>Add images to the entry as base64-encoded HTML tags.</li>
+ *   <li>Save changes back into the database.</li>
+ * </ul>
+ * </p>
+ */
 public class ViewEntryController {
 
     @FXML private HTMLEditor htmlEditor;
@@ -23,6 +35,12 @@ public class ViewEntryController {
     @FXML private Button selectImageButton;
 
     private MemoryEntry entry;
+    
+    /**
+     * Called automatically when the FXML is loaded.
+     * Initializes button states and configures event handlers
+     * for enabling buttons and handling shortcuts.
+     */
     
     @FXML
     public void initialize() {
@@ -43,11 +61,21 @@ public class ViewEntryController {
         // Enable buttons when HTMLEditor is clicked
         htmlEditor.setOnMouseClicked(event -> enableButtons());
     }
+    
+    /**
+     * Enables save and image-select buttons
+     * once the user has interacted with the editor.
+     */
 
     private void enableButtons() {
         saveButton.setDisable(false);
         selectImageButton.setDisable(false);
     }
+    
+    /**
+     * Extra handler (unused in current version) for enabling buttons on key events.
+     * @param event key press event
+     */
 
     private void handleKeyPressed(KeyEvent event) {
         enableButtons();
@@ -62,7 +90,11 @@ public class ViewEntryController {
         htmlEditor.setHtmlText(entry.getContent());
     }
 
-
+    /**
+     * Opens a file chooser to allow the user to select an image.
+     * Converts the image to Base64, embeds it into the HTML content,
+     * and appends it to the editor.
+     */
     @FXML
     private void addPhoto() {
         FileChooser fileChooser = new FileChooser();
@@ -95,7 +127,7 @@ public class ViewEntryController {
             }
         }
     }
-    
+    //show confirmation after saving 
     private void showSaveConfirmation(String message) {
         javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
         alert.setTitle("Save Successful");
@@ -104,11 +136,15 @@ public class ViewEntryController {
         alert.showAndWait();
     }
 
-    
+    /**
+     * Saves the current entry's content into the database.
+     * Updates the {@link MemoryEntry} object and closes the window.
+     */
     
     @FXML
     private void handleSave() {
         if (entry != null) {
+            // Update entry with the current HTML content
             entry.setContent(htmlEditor.getHtmlText());
 
             try {
